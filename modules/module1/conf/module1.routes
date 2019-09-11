@@ -1,0 +1,3 @@
+# Routes
+
+GET /                      controllers.Module1Controller.doSomething()
