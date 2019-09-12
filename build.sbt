@@ -16,9 +16,9 @@ lazy val root = (project in file("."))
  
 lazy val proto = (project in file("modules/common/src/main/scala"))
   .settings(
-    PB.protoSources in Compile := Seq(baseDirectory.value / "modules/common/src/protobuf"),
+    PB.protoSources in Compile := Seq(file("modules/common/src/protobuf")),
     PB.targets in Compile := Seq(
-      scalapb.gen() -> baseDirectory.value / "modules/common/src/main/scala"
+      scalapb.gen() -> baseDirectory.value
     ),
     libraryDependencies ++= Seq(
       "com.thesamet.scalapb" %%% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion,
